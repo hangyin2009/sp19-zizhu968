@@ -13,9 +13,10 @@ public class NBody{
 
 		int firstItemInFile = in.readInt();
 		double secondItemInFile = in.readDouble();
-		Planet[] planets = new Planet[secondItemInFile];
+		int num = (int) secondItemInFile;
+		Planet[] planets = new Planet[num];
 
-		for(int i = 0; i < secondItemInFile; i++){
+		for(int i = 0; i < num; i++){
 		planets[i] = new Planet(in.readDouble(),in.readDouble(),
 			in.readDouble(),in.readDouble(),in.readDouble(),in.readString());
 		
