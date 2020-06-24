@@ -55,24 +55,24 @@ public class NBody{
 		String filename = args[2];
 
 		Double radius = readRadius("./data/planets.txt");
-		Planet[] bodies = readBodies("./data/planets.txt");
+		Planet[] planets = readPlanets("./data/planets.txt");
 
 		StdDraw.enableDoubleBuffering();
 						
 		for(int time = 0; time < T; time += dt){
-			double[] xForces = new double[bodies.length];
-			double[] yForces = new double[bodies.length];
+			double[] xForces = new double[planets.length];
+			double[] yForces = new double[planets.length];
 
-			for(int i = 0; i < bodies.length; i++){
-				xForces[i] = bodies[i].calcNetForceExertedByX(bodies);
-				yForces[i] = bodies[i].calcNetForceExertedByY(bodies);
+			for(int i = 0; i < planets.length; i++){
+				xForces[i] = planets[i].calcNetForceExertedByX(planets);
+				yForces[i] = planets[i].calcNetForceExertedByY(planets);
 
-				bodies[i].update(dt, xForces[i], yForces[i]);
+				planets[i].update(dt, xForces[i], yForces[i]);
 		}
 			drawBackground();
 
-			for(int j = 0; j < bodies.length; j++){
-				bodies[j].draw();
+			for(int j = 0; j < planets.length; j++){
+				planets[j].draw();
 			}
 			
 
@@ -81,12 +81,12 @@ public class NBody{
 
 		}
 
-		StdOut.printf("%d\n", bodies.length);
+		StdOut.printf("%d\n", planets.length);
 		StdOut.printf("%.2e\n", radius);
-		for (int i = 0; i < bodies.length; i++) {
+		for (int i = 0; i < planets.length; i++) {
     	StdOut.printf("%11.4e %11.4e %11.4e %11.4e %11.4e %12s\n",
-                  bodies[i].xxPos, bodies[i].yyPos, bodies[i].xxVel,
-                  bodies[i].yyVel, bodies[i].mass, bodies[i].imgFileName);   
+                  planets[i].xxPos, planets[i].yyPos, planets[i].xxVel,
+                  planets[i].yyVel, planets[i].mass, planets[i].imgFileName);   
 }	
 	}
 
