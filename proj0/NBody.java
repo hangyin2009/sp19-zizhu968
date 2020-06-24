@@ -8,7 +8,7 @@ public class NBody{
 		return secondItemInFile;
 	}
 
-	public static Planet[] readBodies(String s){
+	public static Planet[] readPlanets(String s){
 		In in = new In(s);
 
 		int firstItemInFile = in.readInt();
