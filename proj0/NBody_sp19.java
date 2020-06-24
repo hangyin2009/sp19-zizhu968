@@ -8,15 +8,15 @@ public class NBody{
 		return secondItemInFile;
 	}
 
-	public static Planet[] readBodies(String s){
+	public static Body[] readBodies(String s){
 		In in = new In(s);
 
 		int firstItemInFile = in.readInt();
 		double secondItemInFile = in.readDouble();
-		Planet[] planets = new Planet[5];
+		Body[] planets = new Body[5];
 
 		for(int i = 0; i < 5; i++){
-		planets[i] = new Planet(in.readDouble(),in.readDouble(),
+		planets[i] = new Body(in.readDouble(),in.readDouble(),
 			in.readDouble(),in.readDouble(),in.readDouble(),in.readString());
 		
 		/** dont know why this is not working???
@@ -55,7 +55,7 @@ public class NBody{
 		String filename = args[2];
 
 		Double radius = readRadius("./data/planets.txt");
-		Planet[] bodies = readBodies("./data/planets.txt");
+		Body[] bodies = readBodies("./data/planets.txt");
 
 		StdDraw.enableDoubleBuffering();
 						
