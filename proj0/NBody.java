@@ -13,9 +13,9 @@ public class NBody{
 
 		int firstItemInFile = in.readInt();
 		double secondItemInFile = in.readDouble();
-		Planet[] planets = new Planet[5];
+		Planet[] planets = new Planet[secondItemInFile];
 
-		for(int i = 0; i < 5; i++){
+		for(int i = 0; i < secondItemInFile; i++){
 		planets[i] = new Planet(in.readDouble(),in.readDouble(),
 			in.readDouble(),in.readDouble(),in.readDouble(),in.readString());
 		
@@ -33,9 +33,9 @@ public class NBody{
 		return planets;
 	}
 
-	public static String imageToDraw = "images/starfield.jpg";
+	private static String imageToDraw = "images/starfield.jpg";
 
-	public static void drawBackground(){
+	private static void drawBackground(){
 		
 		StdDraw.enableDoubleBuffering();
 
